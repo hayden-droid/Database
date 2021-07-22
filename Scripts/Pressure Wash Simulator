@@ -53,28 +53,30 @@ end
 
 --//TPing
 spawn(function()
-    while wait(5) do
-        if _G.Farm then
-            if CheckStage() == 1 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(16, 35, 159)))
-            elseif CheckStage() == 2 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-154, 34, 152)))
-            elseif CheckStage() == 3 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-306, 35, 153)))
-            elseif CheckStage() == 4 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-471, 34, 156)))
-            elseif CheckStage() == 5 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-622, 33, 159)))
-            elseif CheckStage() == 6 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-775, 34, 160)))
-            elseif CheckStage() == 7 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-933, 37, 157)))
-            elseif CheckStage() == 8 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1107, 36, 168)))
-            elseif CheckStage() == 9 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1294, 33, 157)))
-            elseif CheckStage() == 10 then
-                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1468, 34, 151)))
+    if _G.IJustWannaCashFarm == false then
+        while wait(5) do
+            if _G.Farm then
+                if CheckStage() == 1 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(16, 35, 159)))
+                elseif CheckStage() == 2 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-154, 34, 152)))
+                elseif CheckStage() == 3 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-306, 35, 153)))
+                elseif CheckStage() == 4 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-471, 34, 156)))
+                elseif CheckStage() == 5 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-622, 33, 159)))
+                elseif CheckStage() == 6 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-775, 34, 160)))
+                elseif CheckStage() == 7 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-933, 37, 157)))
+                elseif CheckStage() == 8 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1107, 36, 168)))
+                elseif CheckStage() == 9 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1294, 33, 157)))
+                elseif CheckStage() == 10 then
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Vector3.new(-1468, 34, 151)))
+                end
             end
         end
     end
@@ -83,6 +85,12 @@ end)
 spawn(function()
     while _G.Farm and wait(1) do
         CheckStage()
+    end
+end)
+
+spawn(function()
+    if _G.Farm then
+        game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Starting", Text = "Starting up the farm. Beware that this may get you banned due to you not gaining any 'dirt'."})
     end
 end)
 
